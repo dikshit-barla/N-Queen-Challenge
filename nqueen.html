@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced N-Queens Challenge</title>
+    <link rel="stylesheet" href="nqueen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="timer" id="gameTimer"></div>
+
+    <div class="difficulty-selector">
+        <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+        <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+        <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+    </div>
+
+    <div class="game-container">
+        <div class="game-header">
+            <h1 class="game-title">N-Queens Challenge</h1>
+            <div class="game-info">
+                <span class="level-display">Level: <span id="levelDisplay">4x4</span></span>
+                <span class="queens-count">Queens: <span id="queensCount">0</span></span>
+            </div>
+            <div id="message" class="message">Place your queens strategically!</div>
+        </div>
+        <div id="board" class="chessboard"></div>
+        <div class="controls">
+            <button id="resetBtn" class="btn" onclick="game.reset()">Reset Board</button>
+            <button id="nextBtn" class="btn" onclick="game.nextLevel()">Next Level</button>
+        </div>
+    </div>
+
+    <div id="instructionsModal" class="instructions-modal">
+        <div class="instructions-content">
+            <button class="close-instructions" onclick="closeInstructions()">✕</button>
+            <h2>N-Queens Challenge Instructions</h2>
+            <br>
+            <h3>Game Objective:</h3>
+            <p>Place N queens on an N×N chessboard such that no two queens threaten each other.</p>
+            <br>
+            <h3>Rules:</h3>
+            <ul>
+                <li>Start with a 4x4 board and place 4 queens</li>
+                <li>Queens can attack horizontally, vertically, and diagonally</li>
+                <li>A queen cannot be placed where it can attack another queen</li>
+                <li>❌ Red blinking X indicates a dangerous position</li>
+                <li>🟢 Green highlights indicate a successful placement</li>
+            </ul>
+            <br>
+            <h3>How to Play:</h3>
+            <ol>
+                <li>Click on a cell to place a queen</li>
+                <li>Click again to remove a queen</li>
+                <li>When all queens are placed without conflicts, click "Next Level"</li>
+                <li>Each level increases board complexity</li>
+                <li>Use "Reset Board" to start over</li>
+            </ol>
+            <br>
+            <p><strong>Challenge:</strong> How far can you progress? Test your strategic thinking!</p>
+        </div>
+    </div>
+
+    <div id="achievementsModal" class="achievements-modal">
+        <div class="achievements-content">
+            <h2>Your Achievements</h2>
+            <div id="achievementsList"></div>
+            <button onclick="closeAchievementsModal()" class="btn">Close</button>
+        </div>
+    </div>
+
+    <footer class="game-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>N-Queens Challenge</h4>
+                <p>© 2024 Strategic Puzzles</p>
+            </div>
+            <div class="footer-section">
+                <h4>Developed By</h4>
+                <p>Barla Dikshit</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>dikshitbarla7@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nqueen.js"></script>
+</body>
+</html>
